@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_content %}
+    <main clas="container mt-3 mb-5">
+        <div class="row">
+        <h1>Portafolio</h1>
+        </div> 
+        <div class="row">
+        {% for proyecto in proyectos %}
+        <div class="col-12 col-mb-4">
+            <article class="card mb-2">
+            <img src="" alt="">
+            
+            <div class="card-body">
+                <h5 class="card-title">{{proyecto.titulo}}</h5>
+                <p class="card-text">{{proyeccto.descripcion}}</p>
+                <a href="{% url 'project_detail' proyecto.pk %"}" class="btn btn-primary"">leer mas</a>
+            </div>
+            </article>
+        </div>
+        {% endfor %}
+        </div>
+    </main>
+{% endblock %}
